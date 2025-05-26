@@ -20,6 +20,7 @@
 <div class="container mt-5">
   <h5 class="mb-3">Edit User Info</h5>
   <form method="POST" action="./process/edit_user.php">
+  <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
     <input type="hidden" name="id" value="<?= htmlspecialchars($user['id'])?>">
     <div class="mb-3">
       <label for="firstName" class="form-label">First Name</label>

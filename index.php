@@ -60,6 +60,7 @@
                 <div class="d-flex gap-2">
                   <a href="./user-edit.php?id=<?= $user['id']?>" class="btn btn-sm btn-primary">Edit</a>
                   <form action="./process/delete_user.php" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
                     <input type="hidden" name="id" value="<?= $user['id']?>">
                     <button type="submit" class="btn btn-sm btn-danger"
                     onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
@@ -88,6 +89,7 @@
         </div>
         <div class="modal-body">
           <form method="POST" action="./process/create_user.php">
+          <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
             <div class="mb-3">
               <label for="firstName" class="form-label">First Name</label>
               <input type="text" class="form-control" name="firstName" id="firstName" required>

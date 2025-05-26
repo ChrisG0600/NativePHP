@@ -23,6 +23,7 @@
 <main class="container w-100 mt-5 p-5">
   <form method="POST" action="./process/login_user.php">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
     <div class="form-floating mb-3">
       <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
